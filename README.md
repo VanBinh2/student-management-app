@@ -39,14 +39,9 @@
 - Node.js 18.x trở lên
 - npm hoặc yarn hoặc pnpm
 
-### Bước 1: Clone repository
-
-\`\`\`bash
-git clone https://github.com/VanBinh2/student-management-app.git
-cd student-management-app
 \`\`\`
 
-### Bước 2: Cài đặt dependencies
+### Bước 1: Cài đặt dependencies
 
 \`\`\`bash
 # Sử dụng npm
@@ -59,15 +54,17 @@ yarn install
 pnpm install
 \`\`\`
 
-### Bước 3: Cấu hình Firebase
+### Bước 2: Cấu hình Firebase
 
 1. Truy cập [Firebase Console](https://console.firebase.google.com/)
 2. Tạo project mới hoặc sử dụng project có sẵn
+![alt text](image-6.png)
 3. Bật **Authentication** với Email/Password provider
 4. Tạo **Firestore Database**
 5. Lấy Firebase config từ Project Settings
-
-### Bước 4: Cấu hình Environment Variables
+Không biết Authentication và Firestore Database ở đâu thì click vào link hinhf ảnh dòng dưới
+![alt text](image-1.png)
+### Bước 3: Cấu hình Environment Variables
 
 Tạo file `.env.local` ở thư mục gốc:
 
@@ -82,7 +79,9 @@ NEXT_PUBLIC_FIREBASE_APP_ID=your_app_id
 \`\`\`
 
 **Hoặc** chỉnh sửa trực tiếp trong file `lib/firebase-config.ts`:
-
+![alt text](image-3.png)
+![alt text](image-4.png)
+![alt text](image-5.png)
 \`\`\`typescript
 export const firebaseConfig = {
   apiKey: "AIzaSyBq6jkPCdKauqkJWhtKLo-wH9qDdPQbR3w",
@@ -95,7 +94,7 @@ export const firebaseConfig = {
 };
 \`\`\`
 
-### Bước 5: Chạy ứng dụng
+### Bước4: Chạy ứng dụng
 
 \`\`\`bash
 # Development mode
@@ -110,7 +109,7 @@ pnpm dev
 
 Mở trình duyệt và truy cập: [http://localhost:3000](http://localhost:3000)
 
-### Bước 6: Build cho Production
+### Bước 5: Build cho Production
 
 \`\`\`bash
 # Build
@@ -162,7 +161,8 @@ student-management-app/
 ## 🔥 Firebase Security Rules
 
 Thêm rules sau vào Firestore để bảo mật dữ liệu:
-
+vào rules của firestore như sau xem hình ảnh bên dưới
+![alt text](image-2.png)
 \`\`\`javascript
 rules_version = '2';
 service cloud.firestore {
@@ -186,19 +186,7 @@ service cloud.firestore {
 }
 \`\`\`
 
-## 🚀 Deploy lên Vercel
 
-1. Push code lên GitHub
-2. Truy cập [Vercel](https://vercel.com)
-3. Import repository từ GitHub
-4. Thêm Environment Variables
-5. Deploy
-
-\`\`\`bash
-# Hoặc sử dụng Vercel CLI
-npm i -g vercel
-vercel
-\`\`\`
 
 ## 📝 Hướng dẫn sử dụng
 
